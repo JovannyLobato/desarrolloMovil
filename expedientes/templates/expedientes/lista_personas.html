@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Personas</title>
+</head>
+<body>
+    <h1>Personas</h1>
+    <ul>
+        {% for persona in personas %}
+            <li>
+                <a href="{% url 'detalle_persona' persona.id %}">{{ persona.nombre }}</a>
+            </li>
+        {% empty %}
+            <li>No hay personas registradas.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
