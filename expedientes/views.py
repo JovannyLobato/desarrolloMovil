@@ -49,3 +49,11 @@ def editar_persona(request, persona_id):
     else:
         form = PersonaForm(instance=persona)
     return render(request, 'expedientes/editar_persona.html', {'form': form, 'persona': persona})
+
+def borrar_persona(request, persona_id):
+    persona = get_object_or_404(Persona, id=persona_id)
+    if request.method == "POST":
+        persona.delete()
+        return redirect('lista_personas')
+    return render(request, 'expedientes/borrar_persona.html', {'persona': persona})
+

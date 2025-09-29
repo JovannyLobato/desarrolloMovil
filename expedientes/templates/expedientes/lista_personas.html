@@ -11,6 +11,7 @@
             <li>
                 <a href="{% url 'detalle_persona' persona.id %}">{{ persona.nombre }}</a>
                 (<a href="{% url 'editar_persona' persona.id %}">Editar</a>)
+                (<a href="{% url 'borrar_persona' persona.id %}">Eliminar</a>)
             </li>
         {% empty %}
             <li>No hay personas registradas.</li>
