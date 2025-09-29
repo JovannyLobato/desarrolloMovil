@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nueva Persona</title>
+</head>
+<body>
+    <h1>Registrar nueva persona</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <p><a href="{% url 'lista_personas' %}">← Volver a la lista</a></p>
+</body>
+</html>
+

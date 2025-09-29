@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar {{ persona.nombre }}</title>
+</head>
+<body>
+    <h1>Editar persona: {{ persona.nombre }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Actualizar</button>
+    </form>
+
+    <p><a href="{% url 'detalle_persona' persona.id %}">← Volver al detalle</a></p>
+</body>
+</html>
+

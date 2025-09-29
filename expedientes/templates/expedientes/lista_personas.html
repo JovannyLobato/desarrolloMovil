@@ -5,15 +5,18 @@
 </head>
 <body>
     <h1>Personas</h1>
+    <a href="{% url 'nueva_persona' %}">Nueva Persona</a>
     <ul>
         {% for persona in personas %}
             <li>
                 <a href="{% url 'detalle_persona' persona.id %}">{{ persona.nombre }}</a>
+                (<a href="{% url 'editar_persona' persona.id %}">Editar</a>)
             </li>
         {% empty %}
             <li>No hay personas registradas.</li>
         {% endfor %}
     </ul>
+
 </body>
 </html>
 

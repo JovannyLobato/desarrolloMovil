@@ -1,5 +1,5 @@
 from django import forms
-from .models import Archivo
+from .models import Archivo, Persona
 
 class ArchivoForm(forms.ModelForm):
     class Meta:
@@ -14,4 +14,7 @@ class ArchivoForm(forms.ModelForm):
             if ext not in ['jpg', 'jpeg', 'png', 'gif', 'pdf']:
                 raise forms.ValidationError("Solo se permiten imagenes o PDF.")
         return archivo
-
+class PersonaForm(forms.ModelForm):
+    class Meta:
+        model = Persona
+        fields = ['nombre', 'descripcion']
